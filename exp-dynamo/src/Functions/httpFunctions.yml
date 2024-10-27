@@ -1,0 +1,9 @@
+api:
+  handler: handler.handler
+  events:
+    - http:
+        path: getUser/{id}
+        method: get
+    - http:
+        path: addUser
+        method: post
