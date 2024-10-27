@@ -1,0 +1,6 @@
+{
+    "watch": ["./"], 
+    "ext": "js,yml,json",
+    "exec": "serverless offline",
+    "delay": "500"
+}  
