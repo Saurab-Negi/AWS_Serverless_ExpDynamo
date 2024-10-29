@@ -2,8 +2,8 @@ api:
   handler: handler.handler
   events:
     - http:
-        path: getUser/{id}
+        path: user/getUser/{id}
         method: get
     - http:
-        path: addUser
+        path: user/addUser
         method: post
