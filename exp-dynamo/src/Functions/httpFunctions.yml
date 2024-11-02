@@ -2,8 +2,8 @@ api:
   handler: handler.handler
   events:
     - http:
-        path: user/getUser/{id}
-        method: get
+        path: signUp
+        method: post
     - http:
-        path: user/addUser
+        path: login
         method: post

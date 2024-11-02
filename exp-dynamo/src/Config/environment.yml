@@ -1,1 +1,2 @@
+JWT_SECRET: "secret-123"
 USERS_TABLE: ${param:tableName}

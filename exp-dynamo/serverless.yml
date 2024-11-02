@@ -27,10 +27,10 @@ resources:
 
 plugins:
   - serverless-offline
-
-package:
-  individually: true
-
+  
 build:
   esbuild:
     minify: true
+
+package:
+  individually: true
