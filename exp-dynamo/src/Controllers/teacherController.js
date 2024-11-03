@@ -31,4 +31,20 @@ const addTeacher= async (req, res) =>{
     }
 }
 
-module.exports = { addTeacher };
+const getTeachers= async (req, res) => {
+    try {
+        const teachers = await teacherModel.scan().exec();
+
+        // Check if there are no teachers
+        if (teachers.length === 0) {
+            return res.sendFormattedResponse(404, false, "No teachers found.");
+        }
+
+        res.sendFormattedResponse(200, true, null, teachers);
+    } catch (error) {
+        console.error("getTeachers Error:", error);
+        res.sendFormattedResponse(500, false, "Internal server error", error.message);
+    }
+}
+
+module.exports = { addTeacher, getTeachers };

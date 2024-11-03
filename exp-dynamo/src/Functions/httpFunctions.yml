@@ -10,3 +10,6 @@ api:
     - http:
         path: addTeacher
         method: post
+    - http:
+        path: getTeachers
+        method: get
