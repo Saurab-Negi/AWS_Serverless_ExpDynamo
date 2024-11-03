@@ -11,3 +11,5 @@
   Resource:
     - Fn::GetAtt: [UsersTable, Arn]
     - Fn::Sub: "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTable}/index/EmailIndex"
+    - Fn::GetAtt: [TeachersTable, Arn]
+    - Fn::Sub: "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${TeachersTable}/index/EmailIndex"

@@ -7,3 +7,6 @@ api:
     - http:
         path: login
         method: post
+    - http:
+        path: addTeacher
+        method: post
