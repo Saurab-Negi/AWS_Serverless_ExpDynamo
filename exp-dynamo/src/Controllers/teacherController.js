@@ -1,13 +1,9 @@
 const teacherModel= require("../Models/teacherModel");
-const validator = require('validator');
 const { v4: uuidv4 } = require("uuid");
 
 const addTeacher= async (req, res) =>{
     const { name, email, phone, qualification, dob, gender, address, classesCanTeach, experience, subjects } = req.body;
 
-    if (!validator.isEmail(email)) {
-        return res.sendFormattedResponse(400, false, "Invalid email format.");
-    }
     const teacher = new teacherModel({
         id: uuidv4(),
         name,
@@ -36,11 +32,11 @@ const getTeachers= async (req, res) => {
         const teachers = await teacherModel.scan().exec();
 
         // Check if there are no teachers
-        if (teachers.length === 0) {
+        if (teachers.count === 0) {
             return res.sendFormattedResponse(404, false, "No teachers found.");
         }
 
-        res.sendFormattedResponse(200, true, null, teachers);
+        res.sendFormattedResponse(200, true, null, { teachers, teachersCount: teachers.count });
     } catch (error) {
         console.error("getTeachers Error:", error);
         res.sendFormattedResponse(500, false, "Internal server error", error.message);

@@ -1,4 +1,5 @@
 const dynamoose = require("dynamoose");
+const validator = require("validator");
 
 const TEACHERS_TABLE = process.env.TEACHERS_TABLE;
 
@@ -19,16 +20,19 @@ const teacherModel = dynamoose.model(TEACHERS_TABLE, {
       global: true,
       name: "EmailIndex",
     },
+    validate: (value) => validator.isEmail(value),
   },
   phone: {
     type: String,
+    validate: (value) => validator.isMobilePhone(value),
   },
   qualification: {
     type: String,
   },
   dob: {
     type: String,
-  },
+    validate: (value) => validator.isDate(value, { format: "DD-MM-YYYY", strictMode: false }),
+  },  
   gender: {
     type: String,
     enum: ["Male", "Female"],
