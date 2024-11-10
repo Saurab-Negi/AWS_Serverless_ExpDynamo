@@ -13,3 +13,15 @@ api:
     - http:
         path: getTeachers
         method: get
+    - http:
+        path: createReport
+        method: post
+    - http:
+        path: getReports
+        method: get
+    - http:
+        path: addVideo
+        method: post
+    - http:
+        path: getVideos
+        method: get

@@ -8,7 +8,7 @@ service: exp-dynamo
 stages:
   default:
     params:
-      tableName: "dps-${sls:stage}"
+      tableName: "ExpDyno-${sls:stage}"
 
 provider:
   name: aws

@@ -13,3 +13,7 @@
     - Fn::Sub: "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTable}/index/EmailIndex"
     - Fn::GetAtt: [TeachersTable, Arn]
     - Fn::Sub: "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${TeachersTable}/index/EmailIndex"
+    - Fn::GetAtt: [ReportsTable, Arn]
+    - Fn::Sub: "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${ReportsTable}/index/StudentNameIndex"
+    - Fn::GetAtt: [VideosTable, Arn]
+    - Fn::Sub: "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${VideosTable}/index/SubjectNameIndex"

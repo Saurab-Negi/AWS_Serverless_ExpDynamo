@@ -1,3 +1,5 @@
 JWT_SECRET: "secret-123"
-USERS_TABLE: ${param:tableName}
+USERS_TABLE: ${param:tableName}-users
 TEACHERS_TABLE: ${param:tableName}-teachers
+REPORT_TABLE: ${param:tableName}-reports
+VIDEO_TABLE: ${param:tableName}-videos
